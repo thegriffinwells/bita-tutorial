@@ -102,16 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Terminal Typing Effect ---
   const typingSequences = [
     {
-      command: 'claude "Create a simple landing page with a hero section"',
-      output: `  Creating landing page...\n  ✓ Created index.html with hero section\n  ✓ Added responsive CSS styles\n  ✓ Done! Open index.html to preview.`
+      command: 'claude "Make me a website with a pink header"',
+      output: `  On it!\n  ✓ Created your website\n  ✓ Added a pink header with your title\n  ✓ Done! Open it in your browser to see.`
     },
     {
-      command: 'claude "Explain what this codebase does"',
-      output: `  Scanning project files...\n  This is a React app with 12 components.\n  It handles user auth, a dashboard, and\n  a REST API integration with pagination.`
+      command: 'claude "What does this project do?"',
+      output: `  Looking at your files...\n  This is a portfolio website! It has a\n  homepage, an about page, and a photo\n  gallery. Want me to change anything?`
     },
     {
-      command: 'claude "Find and fix any bugs in app.js"',
-      output: `  Analyzing app.js...\n  Found 2 issues:\n  ✓ Fixed missing null check on line 42\n  ✓ Fixed async/await in fetchData()\n  All bugs resolved!`
+      command: 'claude "Something looks broken, can you fix it?"',
+      output: `  Let me take a look...\n  Found the problem!\n  ✓ Fixed a typo that was hiding your nav\n  ✓ Everything should work now!`
     }
   ];
 
