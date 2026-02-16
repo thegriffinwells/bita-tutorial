@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code for Beginners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Claude Code</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#what" class="nav-link">What Is It?</a></li>
+        <li><a href="#why" class="nav-link">Why Use It?</a></li>
+        <li><a href="#getting-started" class="nav-link">Get Started</a></li>
+        <li><a href="#concepts" class="nav-link">Key Concepts</a></li>
+        <li><a href="#tips" class="nav-link">Tips</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 1. Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1 class="hero-title">Your AI coding partner, right in the terminal.</h1>
+      <p class="hero-subtitle">Claude Code helps you write, fix, and understand code using plain English. No experience required.</p>
+      <a href="#getting-started" class="btn btn-primary">Get Started</a>
+
+      <div class="terminal-mockup">
+        <div class="terminal-header">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">Terminal</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-command" id="typed-command"></span>
+            <span class="terminal-cursor" id="terminal-cursor">|</span>
+          </div>
+          <div class="terminal-output" id="terminal-output"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. What is Claude Code? -->
+  <section class="section section-lavender" id="what">
+    <div class="container">
+      <h2 class="section-title">What is Claude Code?</h2>
+      <p class="section-intro">Claude Code is a tool by Anthropic that understands your codebase, edits files, runs commands, and handles git workflows &mdash; all through natural language. You just tell it what you want in plain English.</p>
+
+      <div class="access-cards">
+        <div class="access-card">
+          <div class="access-icon">&#x1F4BB;</div>
+          <h3>Terminal CLI</h3>
+          <p>Run <code>claude</code> in your terminal for the full power-user experience.</p>
+        </div>
+        <div class="access-card">
+          <div class="access-icon">&#x1F5A5;</div>
+          <h3>Desktop App</h3>
+          <p>A standalone app that works with your projects on macOS and Windows.</p>
+        </div>
+        <div class="access-card">
+          <div class="access-icon">&#x1F310;</div>
+          <h3>Browser</h3>
+          <p>Use it at <strong>claude.ai/code</strong> with zero local setup.</p>
+        </div>
+      </div>
+
+      <div class="comparison-card">
+        <p>Think of it as a <strong>senior developer in your terminal</strong> who never gets tired, never judges your questions, and always explains their work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Why Use It? -->
+  <section class="section section-white" id="why">
+    <div class="container">
+      <h2 class="section-title">Why Use It?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card benefit-coral">
+          <div class="benefit-icon">&#x1F4AC;</div>
+          <h3>Write Code in Plain English</h3>
+          <p>Describe what you want and Claude writes the code. No syntax memorization needed.</p>
+        </div>
+        <div class="benefit-card benefit-teal">
+          <div class="benefit-icon">&#x1F9E0;</div>
+          <h3>Understands Your Codebase</h3>
+          <p>Claude reads your entire project so you don't have to manually copy-paste context.</p>
+        </div>
+        <div class="benefit-card benefit-lavender">
+          <div class="benefit-icon">&#x1F9F9;</div>
+          <h3>Handles the Boring Stuff</h3>
+          <p>Tests, linting, merge conflicts &mdash; let Claude deal with the tedious parts.</p>
+        </div>
+        <div class="benefit-card benefit-yellow">
+          <div class="benefit-icon">&#x1F6E0;</div>
+          <h3>Works With Your Tools</h3>
+          <p>Runs alongside VS Code, your terminal, and your existing workflow.</p>
+        </div>
+        <div class="benefit-card benefit-teal">
+          <div class="benefit-icon">&#x2601;</div>
+          <h3>Zero Setup in Browser</h3>
+          <p>Open claude.ai/code and start coding immediately. Nothing to install.</p>
+        </div>
+        <div class="benefit-card benefit-coral">
+          <div class="benefit-icon">&#x1F500;</div>
+          <h3>Natural Language Git</h3>
+          <p>Commits, PRs, branches &mdash; all through plain English commands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Getting Started -->
+  <section class="section section-teal" id="getting-started">
+    <div class="container">
+      <h2 class="section-title">Getting Started</h2>
+      <p class="section-intro">Follow these steps and you'll be up and running before you know it.</p>
+
+      <div class="steps">
+        <!-- Step 1 -->
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Get Access</h3>
+            <p>Sign up for a <strong>Claude Pro</strong> or <strong>Max</strong> subscription, or use API credits via the Anthropic Console. The browser version at <strong>claude.ai/code</strong> requires no local install at all.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Install Claude Code</h3>
+            <p>Pick the method that matches your system:</p>
+            <div class="code-tabs">
+              <button class="code-tab active" data-tab="mac">macOS</button>
+              <button class="code-tab" data-tab="win">Windows</button>
+              <button class="code-tab" data-tab="npm">npm</button>
+            </div>
+            <div class="code-panels">
+              <div class="code-panel active" id="panel-mac">
+                <pre><code>brew install claude-code</code></pre>
+              </div>
+              <div class="code-panel" id="panel-win">
+                <pre><code>winget install Anthropic.ClaudeCode</code></pre>
+              </div>
+              <div class="code-panel" id="panel-npm">
+                <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+              </div>
+            </div>
+            <p class="step-note">Native installs (brew &amp; winget) auto-update. The npm method works on any OS.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Launch It</h3>
+            <p>Navigate to any project folder and type:</p>
+            <div class="code-block">
+              <pre><code><span class="prompt">$</span> cd my-project
+<span class="prompt">$</span> claude</code></pre>
+            </div>
+            <p>That's it. Claude will scan your project and say hello.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Try Your First Prompt</h3>
+            <p>Here are some great things to try first:</p>
+            <div class="prompt-examples">
+              <div class="prompt-example">"Explain what this codebase does"</div>
+              <div class="prompt-example">"Create a simple HTML page with a nav bar"</div>
+              <div class="prompt-example">"Find and fix any bugs in app.js"</div>
+              <div class="prompt-example">"Write tests for the login function"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Learn the Modes</h3>
+            <p>Claude Code has three modes. We recommend starting in <strong>Edit mode</strong>.</p>
+            <div class="modes-visual">
+              <div class="mode-card">
+                <div class="mode-label">Ask</div>
+                <p>Read-only. Great for questions. Claude looks but doesn't touch.</p>
+              </div>
+              <div class="mode-card mode-recommended">
+                <div class="mode-label">Edit <span class="recommended-badge">Recommended</span></div>
+                <p>Claude can modify files, but asks your permission first.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-label">Auto-accept</div>
+                <p>Claude runs freely. Best once you're comfortable and trust the workflow.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-celebration">
+          <p>You just learned the basics of Claude Code!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Key Concepts -->
+  <section class="section section-lavender" id="concepts">
+    <div class="container">
+      <h2 class="section-title">Key Concepts</h2>
+      <p class="section-intro">A quick glossary of things you'll encounter. Click to expand.</p>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span class="accordion-title">CLAUDE.md</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>A special file you put in your project folder that tells Claude your rules and coding standards. Think of it as a style guide for your AI pair programmer. For example, you can tell Claude to always use TypeScript, prefer functional components, or follow a specific naming convention.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span class="accordion-title">Slash Commands</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Shortcuts that start with <code>/</code> that trigger specific actions. For example, <code>/bug</code> reports issues, <code>/help</code> shows available commands, and your team can create custom ones. They're like keyboard shortcuts but for Claude.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span class="accordion-title">MCP (Model Context Protocol)</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>The way Claude connects to external tools like GitHub, Slack, and databases. MCP lets Claude reach beyond your local files to interact with the services your project depends on. Think of it as giving Claude permission to use your other tools.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span class="accordion-title">Plan Mode</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>A special mode (activated by pressing <kbd>Shift+Tab</kbd> twice) that forces Claude to think and plan before writing any code. Great for complex tasks where you want to review the approach before Claude starts making changes.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span class="accordion-title">Subagents</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Specialized Claude instances that handle complex tasks in parallel. When Claude faces a big job, it can spin up subagents to work on different parts simultaneously &mdash; like having a small team instead of one developer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Tips & Tricks -->
+  <section class="section section-white" id="tips">
+    <div class="container">
+      <h2 class="section-title">Tips &amp; Tricks</h2>
+      <div class="tips-grid">
+        <div class="tip-bubble tip-coral">
+          <p><strong>Be specific.</strong> The more context you give, the better the results. "Fix the login bug where users can't reset passwords" beats "fix the bug".</p>
+        </div>
+        <div class="tip-bubble tip-teal">
+          <p><strong>Use Plan Mode first.</strong> Press <kbd>Shift+Tab</kbd> twice before big tasks so Claude thinks before it acts.</p>
+        </div>
+        <div class="tip-bubble tip-lavender">
+          <p><strong>Create a CLAUDE.md file.</strong> Teach Claude your project's rules and preferences. It reads this file every session.</p>
+        </div>
+        <div class="tip-bubble tip-yellow">
+          <p><strong>Try the browser version.</strong> Go to <strong>claude.ai/code</strong> if you don't want to install anything at all.</p>
+        </div>
+        <div class="tip-bubble tip-coral">
+          <p><strong>Pipe things in.</strong> From your terminal, try <code>git diff | claude "review this"</code> to send output directly to Claude.</p>
+        </div>
+        <div class="tip-bubble tip-teal">
+          <p><strong>Type <code>/help</code> anytime.</strong> If you're ever stuck, this command shows you everything Claude can do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Resources & Links -->
+  <footer class="footer" id="resources">
+    <div class="container">
+      <h2 class="section-title">Resources &amp; Links</h2>
+      <div class="resources-grid">
+        <a href="https://docs.anthropic.com/en/docs/claude-code" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-icon">&#x1F4D6;</span>
+          <span class="resource-text">Official Docs</span>
+        </a>
+        <a href="https://github.com/anthropics/claude-code" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-icon">&#x1F4E6;</span>
+          <span class="resource-text">GitHub Repo</span>
+        </a>
+        <a href="https://discord.gg/anthropic" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-icon">&#x1F4AC;</span>
+          <span class="resource-text">Discord Community</span>
+        </a>
+        <a href="https://github.com/anthropics/awesome-claude-code" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-icon">&#x2B50;</span>
+          <span class="resource-text">Awesome Claude Code</span>
+        </a>
+      </div>
+      <p class="footer-note">Made with care for beginners everywhere.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
